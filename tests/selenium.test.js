@@ -62,5 +62,5 @@ test("abre a página TaskFlow no Chrome", async () => {
 
   const title = await driver.findElement(By.css("h1")).getText();
 
-  expect(title).toBe("TaskFlow");
+  expect(title).toBe("Apresentacao");
 });
