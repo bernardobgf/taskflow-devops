@@ -20,7 +20,15 @@ jobs:
           node-version: 22
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci
 
-      - name: Executar testes
-        run: npm test
+      - name: Instalar Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Executar testes e cobertura
+        run: npm test -- --runInBand
