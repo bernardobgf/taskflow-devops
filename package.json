@@ -1,0 +1,29 @@
+{
+  "name": "taskflow-devops",
+  "version": "1.0.0",
+  "description": "Projeto N3 Devops",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardobgf/taskflow-devops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/bernardobgf/taskflow-devops/issues"
+  },
+  "homepage": "https://github.com/bernardobgf/taskflow-devops#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
