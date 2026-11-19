@@ -32,3 +32,15 @@ jobs:
 
       - name: Executar testes e cobertura
         run: npm test -- --runInBand
+
+      - name: Continuous Delivery - Merge develop para main
+        if: success() && github.ref == 'refs/heads/develop'
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout -B main origin/main
+          git merge --no-edit origin/develop
+          git push https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git main
